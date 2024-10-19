@@ -317,15 +317,18 @@ public class Program
         {
             sum = sum + k;
             k = k * 2;
-            while (sum >= 150)
-            {
-                sum = sum /10;
-                power++;
-            }
+            
         }
+
         answer = sum/15;
-        //answer = Math.Round(answer, 2);
+        while (answer >= 10)
+        {
+            answer = answer / 10;
+            power++;
+        }
+        answer = Math.Round(answer, 2);
         Console.WriteLine(answer);
+        Console.WriteLine("16");
         Console.WriteLine(power);
         return (answer, power);
     }
@@ -368,7 +371,7 @@ public class Program
         while (true)
         {
             slag = Math.Cos(n * x) / n / n;
-            if (Math.Abs(slag) < 0.0001)
+            if (slag < 0.0001)
             {
                 break;
             }
@@ -441,6 +444,10 @@ public class Program
     public (int, int) Task_2_5(int N, int M)
     {
         int quotient = 0, remainder = 0;
+        if ((N == 0) || (M == 0))
+        {
+            return (0, 0);
+        }
         if (N < 0)
         {
             N = -N;
