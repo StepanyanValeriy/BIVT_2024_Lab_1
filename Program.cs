@@ -623,7 +623,7 @@ public class Program
         {
             zn = zn * i;
             ch = Math.Cos(i * x);
-            if (ch / zn < 0.0001) {
+            if (Math.Abs(ch / zn) < 0.0001) {
                 break;
             }
             S += (ch / zn);
