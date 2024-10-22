@@ -265,7 +265,7 @@ public class Program
             {
             answer = -1;
             }
-            if ((x <= -1) && (x > 1))
+            if ((x > -1) && (x <= 1))
             {
             answer = -x;
             }
@@ -371,7 +371,7 @@ public class Program
         while (true)
         {
             slag = Math.Cos(n * x) / n / n;
-            if (slag < 0.0001)
+            if (Math.Abs(slag) < 0.0001)
             {
                 break;
             }
